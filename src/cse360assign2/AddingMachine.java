@@ -10,16 +10,20 @@ package cse360assign2;
 public class AddingMachine {
 
 	/**
-	 * The current total of the numbers, 
-	 * modified by either adding or subtracting.
+	 * The current total of the numbers, modified by adding or subtracting.
 	 */
 	private int total;
+	/**
+	 * The current history of the steps to reach <code>total</code>.
+	 */
+	private String history;
 	
 	/**
 	 * Class constructor, just initialize variables
 	 */
 	public AddingMachine() {
-		total = 0;  // not needed - included for clarity
+		this.total = 0;  // not needed - included for clarity
+		this.history = "0";
 	}
 	
 	/**
@@ -27,7 +31,7 @@ public class AddingMachine {
 	 * @return the total amount, <code>total</code>
 	 */
 	public int getTotal() {
-		return 0;
+		return this.total;
 	}
 	
 	/**
@@ -35,7 +39,8 @@ public class AddingMachine {
 	 * @param value the value to add to the total
 	 */
 	public void add(int value) {
-		
+		this.total += value;
+		this.history += " + " + value;
 	}
 	
 	/**
@@ -43,20 +48,22 @@ public class AddingMachine {
 	 * @param value the value to subtracted from the total
 	 */
 	public void subtract(int value) {
-		
+		this.total -= value;
+		this.history += " - " + value;
 	}
 		
 	/**
 	 * Return the history of additions and subtractions.
 	 */
 	public String toString() {
-		return "";
+		return this.history;
 	}
 
 	/**
 	 * Reset the total and history.
 	 */
 	public void clear() {
-	
+		this.total = 0;
+		this.history = "0";
 	}
 }
