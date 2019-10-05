@@ -1,0 +1,10 @@
+# Eclipse files
+/bin/
+/doc/
+.settings/
+.metadata/
+.classpath
+# keep .project so can be imported to eclipse easily
+
+# Mac file
+.DS_Store
